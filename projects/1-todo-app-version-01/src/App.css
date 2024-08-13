@@ -1,0 +1,23 @@
+h1 {
+    font-weight: 700;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+}
+
+.item-container {
+    text-align: left;
+    
+}
+
+.DM-button {
+    min-width: 80px;
+   
+}
+
+.DM-row {
+    margin: 10px 5px;
+}
