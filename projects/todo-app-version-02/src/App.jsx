@@ -9,7 +9,6 @@ import Welcomemessage from "./components/Welcomemessage,";
 function App() {
   const [todoItems, setodoItems] = useState([]);
   const onbuttonclick = (itemname, itemduedate) => {
-    console.log(`the new item is ${itemname} and ${itemduedate}`);
     const newtodoItems = [
       ...todoItems,
       { name: itemname, duedate: itemduedate },
@@ -19,7 +18,6 @@ function App() {
   const handledeleteitem = (todoitemname) => {
     const newtodoItems = todoItems.filter((item) => item.name !== todoitemname);
     setodoItems(newtodoItems);
-    console.log(`the item deleted is ${todoitemname}`);
   };
 
   return (

@@ -1,9 +1,14 @@
-import styles from "./Display.module.css"
+import styles from "./Display.module.css";
 
-function Display({displayvalue}) {
+function Display({ displayvalue }) {
   return (
-    <input className={styles.display} type="text"  value={displayvalue}  readOnly/>
-  )
+    <input
+      className={styles.display}
+      type="text"
+      value={displayvalue}
+      readOnly
+    />
+  );
 }
 
-export default Display
+export default Display;

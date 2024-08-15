@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function Todohere({ onbuttonclick }) {
-  const [todoname, settodoname] = useState();
-  const [tododate, settododate] = useState();
+  const [todoname, settodoname] = useState(" ");
+  const [tododate, settododate] = useState(" ");
 
   const handletodoname = (event) => {
     settodoname(event.target.value);
@@ -27,10 +27,7 @@ function Todohere({ onbuttonclick }) {
           />
         </div>
         <div className="col-4">
-          <input type="date"
-           value={tododate} 
-           onChange={handletododate} 
-           />
+          <input type="date" value={tododate} onChange={handletododate} />
         </div>
         <div className="col-1">
           <button

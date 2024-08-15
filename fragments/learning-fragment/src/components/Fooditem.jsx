@@ -1,6 +1,6 @@
 import styles from "./Fooditem.module.css";
 
-function Fooditem({handleKeyDown}) {
+function Fooditem({ handleKeyDown }) {
   return (
     <input
       className={styles.foodinput}
