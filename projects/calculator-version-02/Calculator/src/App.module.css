@@ -1,6 +1,26 @@
 .calculator {
   border: 1px solid gray;
   width: 200px;
-}
+  border-radius: 5px;
+  background-color: grey;
+ }
+ .calculatorcontainer{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./components/images/cal.jpg);
+  background-size: "cover";
+  height: 100vh;
+ }
+ .info{
+  font-weight: 900;
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+  font-size:xx-large;
+  border-radius: 20px;
+ }
 
 

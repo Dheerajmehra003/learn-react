@@ -17,9 +17,14 @@ function App() {
     }
   };
   return (
+    <div className={styles.calculatorcontainer}>
+      <div className={styles.info}>
+      Calculator with Reactjs
+      </div>
     <div className={styles.calculator}>
       <Display displayvalue={CalVal} />
       <Buttonscontainer onButtonclick={onButtonclick} />
+    </div>
     </div>
   );
 }

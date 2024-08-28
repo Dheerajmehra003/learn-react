@@ -2,6 +2,7 @@ h1 {
     font-weight: 700;
     margin: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 input {
@@ -21,4 +22,20 @@ input {
 .DM-row {
     margin: 10px 5px;
     align-items: center;
+}
+.todocontainer{
+    
+    background-image: url(./components/images/tododity.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: "cover";
+    min-height: 100vh;
+
+}
+.listcontainer{
+        
+      background-color: white;
+      width: 600px;
+      border-radius: 20px;
 }

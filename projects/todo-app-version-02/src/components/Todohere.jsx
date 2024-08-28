@@ -18,7 +18,7 @@ function Todohere({ onbuttonclick }) {
   return (
     <div className="container">
       <div className="row DM-row">
-        <div className="col-6">
+        <div className="col-5">
           <input
             type="text"
             placeholder="Enter todo here"

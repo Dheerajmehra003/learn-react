@@ -21,6 +21,8 @@ function App() {
   };
 
   return (
+    <div className="todocontainer">
+      <div className="listcontainer">
     <center className="todo-container">
       <Appname />
       <Todohere onbuttonclick={onbuttonclick} />
@@ -30,6 +32,8 @@ function App() {
         ondeleteclick={handledeleteitem}
       ></Todoitems>
     </center>
+    </div>
+    </div>
   );
 }
 

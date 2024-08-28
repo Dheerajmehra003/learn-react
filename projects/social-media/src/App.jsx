@@ -1,23 +1,17 @@
-import { useState } from "react";
-import "./App.css";
-import Createpost from "./components/Createpost";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Postlist from "./components/Postlist";
-import Sidebar from "./components/Sidebar";
+import React, { useState } from 'react'
 
 function App() {
-  const [selectedTab, setselectedTab] = useState("Home");
+  const[count , setCount]= useState(0);
+ const  handleclick=()=>{
+   setCount(count+1);
+  }
+
   return (
-    <div className="app-container">
-      <Sidebar selectedTab={selectedTab} />
-      <div className="app">
-        <Header />
-        {selectedTab === "Home" ? <Postlist /> : <Createpost />}
-        <Footer />
-      </div>
+    <div>
+      <h1>count:{count}</h1>
+      <button onClick={handleclick} >click me</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
