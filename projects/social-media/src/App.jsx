@@ -40,10 +40,12 @@ function App() {
 // }
 //  const result= useMemo(()=>cubenum(number),[number])
 
-const [counter,setCounter]=useState(0)
+// const [counter,setCounter]=useState(0)
  
 // const newfn=()=>{}
-  const newfn=useCallback(()=>{},[])
+  // const newfn=useCallback(()=>{},[])
+
+  const value=20;
 
   return (
     <div>
@@ -61,11 +63,14 @@ const [counter,setCounter]=useState(0)
      <h1>cube of the number is : {result}</h1>
      <button onClick={()=>setCounter(counter+1)}>Counter</button>
      <h1>counter:{counter}</h1> */}
-      
+{/*       
       <Header newfn={newfn}/>
      <h1>counter:{counter} </h1>
-    <button onClick={()=>{setCounter(counter+1)}} >click me</button>
-
+    <button onClick={()=>{setCounter(counter+1)}} >click me</button> */}
+    
+    <h1>{value}</h1>
+    <button>Increment</button>
+    <button>Decrement</button>
     </div>
   )
 }
