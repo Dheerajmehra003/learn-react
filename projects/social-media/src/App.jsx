@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState,useMemo, useCallback } from 'react'
 import Header from '../components/Header'
+import ChildComponent from './components/childComponent'
 
 function App() {
 //   const[count , setCount]= useState(0);
@@ -45,7 +46,40 @@ function App() {
 // const newfn=()=>{}
   // const newfn=useCallback(()=>{},[])
 
-  const value=20;
+  // const value=20;
+
+  // const [state, setState] = useState(false)
+
+  // const handleClick = () => {
+  // setState(!state)
+  // }
+
+  // const message = "hello this is from child"
+
+  const [count, setCount] = useState(0)
+  const [inputValue, setInputValue]= useState("")
+  const [isVisible, setIsVisible] = useState(false);
+  const [newTodo, setNewTodo] = useState("")
+  const [todos, setTodos] = useState([])
+  
+  const arr = ['mango', 'apple', 'banana', 'cherry']
+
+   const handleSubmit = (e) => {
+    e.preventDefault()
+         console.log(inputValue)
+  }
+  
+   const addTodo = () => {
+    if (newTodo) {
+      setTodos([...todos, newTodo])
+      setNewTodo('')
+    }
+   }
+
+   const removeTodo = (index) => {
+    setTodos(todos.filter((_, i)=>i !== index))
+   }
+ 
 
   return (
     <div>
@@ -68,10 +102,63 @@ function App() {
      <h1>counter:{counter} </h1>
     <button onClick={()=>{setCounter(counter+1)}} >click me</button> */}
     
-    <h1>{value}</h1>
-    <button>Increment</button>
-    <button>Decrement</button>
+    {/* <h1>{value}</h1> */}
+    {/* <button>Increment</button> */}
+    {/* <button>Decrement</button> */}
+
+     
+    {/* <button onClick={handleClick}>click me</button>
+     {state===true ?
+      <p>hello world</p>
+    : <div></div>}
+
+    <ChildComponent message={message}/>
+     
+    {state===true ?
+      <p>user is logged in</p>
+    : <p>user is logged out</p>} */}
+      
+      {/* <form>
+        <input type='text' value='name'/>
+        <button onClick={handlesubmit}>submit</button>
+      </form> */}
+
+      <p>count:{count}</p>
+      <button onClick={(prev)=>setCount(count+1)}>increment</button>
+      <button onClick={(prev)=>setCount(count-1)}>decrement</button>
+      
+      <ul>
+        {arr.map((item, index)=>(
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={inputValue} onChange={(e)=>setInputValue(e.target.value)} />
+        <button type='submit'>submit</button>
+      </form>
+
+      <div>
+      <button onClick={() => setIsVisible(!isVisible)}>
+        {isVisible ? 'Hide' : 'Show'} Text
+      </button>
+      {isVisible && <p>Hello, World!</p>}
     </div>
+
+     <div>
+      <input type="text" value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} />
+      <button onClick={addTodo}>add</button>
+      <ul>
+        {todos.map((item, index)=>(
+          <li key={index}>
+            {item}
+            <button onClick={()=>removeTodo(index)}>delete</button>
+            </li>
+        ))}
+      </ul>
+     </div>
+    </div>
+    
   )
 }
 
