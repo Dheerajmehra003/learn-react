@@ -62,23 +62,26 @@ function App() {
   const [newTodo, setNewTodo] = useState("")
   const [todos, setTodos] = useState([])
   
-  const arr = ['mango', 'apple', 'banana', 'cherry']
-
-   const handleSubmit = (e) => {
-    e.preventDefault()
-         console.log(inputValue)
-  }
+  // const arr = ['mango', 'apple', 'banana', 'cherry']
   
-   const addTodo = () => {
-    if (newTodo) {
-      setTodos([...todos, newTodo])
-      setNewTodo('')
-    }
-   }
+  const options = ["cricket", "football", "hockey"];
+  const days = ["weekday", "weekend"];
 
-   const removeTodo = (index) => {
-    setTodos(todos.filter((_, i)=>i !== index))
-   }
+  //  const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //        console.log(inputValue)
+  // }
+  
+  //  const addTodo = () => {
+  //   if (newTodo) {
+  //     setTodos([...todos, newTodo])
+  //     setNewTodo('')
+  //   }
+  //  }
+
+  //  const removeTodo = (index) => {
+  //   setTodos(todos.filter((_, i)=>i !== index))
+  //  }
  
 
   return (
@@ -123,7 +126,7 @@ function App() {
         <button onClick={handlesubmit}>submit</button>
       </form> */}
 
-      <p>count:{count}</p>
+      {/* <p>count:{count}</p>
       <button onClick={(prev)=>setCount(count+1)}>increment</button>
       <button onClick={(prev)=>setCount(count-1)}>decrement</button>
       
@@ -154,9 +157,37 @@ function App() {
             {item}
             <button onClick={()=>removeTodo(index)}>delete</button>
             </li>
-        ))}
-      </ul>
-     </div>
+        ))} */}
+      {/* </ul> */}
+     {/* </div> */}
+
+      <div>
+        {/* {
+             options.map((item, index)=>{
+              return (
+                <label key={index}>
+                  <input type="radio" name='option' value={item} onChange={(e)=>setInputValue(e.target.value)} />
+                  {item}
+                </label>
+              )
+            })
+          }
+        {
+             days.map((item, index)=>{
+              return (
+                <label key={index}>
+                  <input type="radio" name='option' value={item} onChange={(e)=>setNewTodo(e.target.value)} />
+                  {item}
+                </label>
+              )
+            })
+          }
+          <p>Game: {inputValue}</p>
+          <p>Day: {newTodo}</p>
+         */}
+         
+      </div>
+
     </div>
     
   )
