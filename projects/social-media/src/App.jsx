@@ -64,8 +64,27 @@ function App() {
   
   // const arr = ['mango', 'apple', 'banana', 'cherry']
   
-  const options = ["cricket", "football", "hockey"];
-  const days = ["weekday", "weekend"];
+  // const options = ["cricket", "football", "hockey"];
+  // const days = ["weekday", "weekend"];
+
+  const countries = [
+    {
+      name:'India',
+      value: 'IN',
+      cities: ['Delhi', 'Mumbai']
+    },
+    {
+      name:'Pakistan',
+      value: 'Pal',
+      cities: ['Lahore', 'karachi']
+    },
+    {
+      name:'Bangladesh',
+      value: 'BG',
+      cities: ['Daka', 'Chittagong']
+    },
+  ]
+
 
   //  const handleSubmit = (e) => {
   //   e.preventDefault()
@@ -185,7 +204,20 @@ function App() {
           <p>Game: {inputValue}</p>
           <p>Day: {newTodo}</p>
          */}
-         
+
+          <select>
+            {country &&
+          countries
+            .filter((c) => c.name === country)[0]
+            .cities.map((city, i) => {
+              return (
+                <option key={i} value={city}>
+                  {city}
+                </option>
+              );
+            })}
+          </select>
+
       </div>
 
     </div>
