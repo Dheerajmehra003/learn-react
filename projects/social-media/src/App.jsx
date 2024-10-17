@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState,useMemo, useCallback } from 'react'
 import Header from '../components/Header'
 import ChildComponent from './components/childComponent'
+import ClassComponentExample from './components/ClassComponent'
 
 function App() {
 //   const[count , setCount]= useState(0);
@@ -56,34 +57,34 @@ function App() {
 
   // const message = "hello this is from child"
 
-  const [count, setCount] = useState(0)
-  const [inputValue, setInputValue]= useState("")
-  const [isVisible, setIsVisible] = useState(false);
-  const [newTodo, setNewTodo] = useState("")
-  const [todos, setTodos] = useState([])
+  // const [count, setCount] = useState(0)
+  // const [inputValue, setInputValue]= useState("")
+  // const [isVisible, setIsVisible] = useState(false);
+  // const [newTodo, setNewTodo] = useState("")
+  // const [todos, setTodos] = useState([])
   
   // const arr = ['mango', 'apple', 'banana', 'cherry']
   
   // const options = ["cricket", "football", "hockey"];
   // const days = ["weekday", "weekend"];
 
-  const countries = [
-    {
-      name:'India',
-      value: 'IN',
-      cities: ['Delhi', 'Mumbai']
-    },
-    {
-      name:'Pakistan',
-      value: 'Pal',
-      cities: ['Lahore', 'karachi']
-    },
-    {
-      name:'Bangladesh',
-      value: 'BG',
-      cities: ['Daka', 'Chittagong']
-    },
-  ]
+  // const countries = [
+  //   {
+  //     name:'India',
+  //     value: 'IN',
+  //     cities: ['Delhi', 'Mumbai']
+  //   },
+  //   {
+  //     name:'Pakistan',
+  //     value: 'Pal',
+  //     cities: ['Lahore', 'karachi']
+  //   },
+  //   {
+  //     name:'Bangladesh',
+  //     value: 'BG',
+  //     cities: ['Daka', 'Chittagong']
+  //   },
+  // ]
 
 
   //  const handleSubmit = (e) => {
@@ -101,12 +102,17 @@ function App() {
   //  const removeTodo = (index) => {
   //   setTodos(todos.filter((_, i)=>i !== index))
   //  }
+
+    const callback = (data) => {
+    console.log("data from  child", data)
+    return data;
+  }
  
 
   return (
-    <div>
-      {/* <h1>count:{count}</h1>
-      <button onClick={handleclick} >click me</button> */}
+
+    <>
+      {/* <button onClick={handleclick} >click me</button> */} 
     {/* <h1>I have a {car.model}</h1>
     <p>It is from {car.year} and a {car.brand} </p>
     <button onClick={handleclick}>click me</button> */}
@@ -180,7 +186,7 @@ function App() {
       {/* </ul> */}
      {/* </div> */}
 
-      <div>
+      
         {/* {
              options.map((item, index)=>{
               return (
@@ -204,7 +210,7 @@ function App() {
           <p>Game: {inputValue}</p>
           <p>Day: {newTodo}</p>
          */}
-
+{/* 
           <select>
             {country &&
           countries
@@ -218,11 +224,20 @@ function App() {
             })}
           </select>
 
+      </div> */}
+      <div style={{height:'100px', width:'100px', backgroundColor:`red`}}>
+
       </div>
 
-    </div>
+    {/* </div> */}
+     <ChildComponent fromchild={callback} />
+     {/* <ClassComponentExample /> */}
+    </>
+    )
+    }
+      
     
-  )
-}
+
 
 export default App
+  
